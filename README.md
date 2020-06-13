@@ -13,4 +13,4 @@
 
 ### Useful Tutorial
 
-1. https://strapi.io/blog/building-a-static-website-using-gatsby-and-strapi
+1. https://strapi.io/blog/building-a-static-website-using-gatsby-and-strap
