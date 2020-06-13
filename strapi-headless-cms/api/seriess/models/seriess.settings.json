@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seriesses",
+  "info": {
+    "name": "BlogSeries"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "posts": {
+      "collection": "post",
+      "via": "blogSeries"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
