@@ -9,6 +9,7 @@
 
 1. npm install --global gatsby-cli
 2. gatsby new blog
+3. gatsby develop
 
 
 ### Useful Tutorial
