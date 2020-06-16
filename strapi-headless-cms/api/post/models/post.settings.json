@@ -45,8 +45,33 @@
       "targetField": "title"
     },
     "blogSeries": {
-      "via": "posts",
-      "model": "seriess"
+      "model": "seriess",
+      "via": "posts"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "previewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "previewText": {
+      "type": "string"
     }
   }
 }
