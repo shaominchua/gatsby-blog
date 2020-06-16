@@ -10,8 +10,8 @@
   },
   "attributes": {
     "posts": {
-      "collection": "post",
-      "via": "blogSeries"
+      "via": "blogSeries",
+      "collection": "post"
     },
     "title": {
       "type": "string"
