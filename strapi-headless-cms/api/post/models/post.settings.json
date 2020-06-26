@@ -13,12 +13,6 @@
       "type": "richtext",
       "required": true
     },
-    "subtitle": {
-      "type": "richtext"
-    },
-    "readLength": {
-      "type": "richtext"
-    },
     "media": {
       "collection": "file",
       "via": "related",
@@ -71,6 +65,12 @@
       "required": false
     },
     "previewText": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "readLength": {
       "type": "string"
     }
   }
