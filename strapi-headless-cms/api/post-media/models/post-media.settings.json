@@ -9,19 +9,8 @@
     "timestamps": true
   },
   "attributes": {
-    "media": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "data": {
-      "type": "json"
+    "postRef": {
+      "type": "integer"
     }
   }
 }

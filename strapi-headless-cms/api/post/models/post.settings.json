@@ -72,6 +72,15 @@
     },
     "readLength": {
       "type": "string"
+    },
+    "relatedPosts": {
+      "collection": "post",
+      "via": "posts",
+      "dominant": true
+    },
+    "posts": {
+      "collection": "post",
+      "via": "relatedPosts"
     }
   }
 }
