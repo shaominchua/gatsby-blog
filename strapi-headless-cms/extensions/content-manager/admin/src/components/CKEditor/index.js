@@ -4,12 +4,15 @@ import CKEditor from 'ckeditor4-react';
 // import CKEditor from 'ckeditor-full';
 // import CKEditor from 'ckeditor'
 // import ClassicEditor from '@akilli/ckeditor4-build-classic';
-// import CKEditor from '@ckeditor/ckeditor5-react';
-//import ClassicEditor from '@ckeditor/ckeditor4-full';
+// // import CKEditor from '@ckeditor/ckeditor5-react';
+// import ClassicEditor from '@ckeditor/ckeditor4-full';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
+
+// import '../CKEditor/src/ckeditor/ckeditor'
 
 const Wrapper = styled.div`
   .ck-editor__main {
@@ -22,17 +25,21 @@ const Wrapper = styled.div`
 
 
 const Editor = ({ onChange, name, value }) => {
-  return (
-  
-    <Wrapper>
-          {/* <div id="editor">
-              <p>This is the editor content.</p>
-          </div>
-          <script src="./node_modules/ckeditor/ckeditor.js"></script>
-          <script>
-              CKEDITOR.replace( 'editor' );
-          </script> */}
 
+  return (
+    // window.CKEDITOR_BASEPATH = '/node_modules/ckeditor4-full/'
+
+
+    // CKEDITOR.replace( 'app', {
+    //     extraPlugins: ['iframe','youtube']
+    // } )
+
+    // window.CKEDITOR_BASEPATH = '/node_modules/ckeditor4/'
+
+    // <div>Helloooooo</div>
+    <Wrapper>
+
+  
       <CKEditor
 
         // plugins={{
@@ -40,6 +47,8 @@ const Editor = ({ onChange, name, value }) => {
         // }}
 
         data={value}
+
+
 
         // editor={CKEDITOR.replace(CKEDITOR.instances.editor1)}
 
@@ -51,38 +60,47 @@ const Editor = ({ onChange, name, value }) => {
         // replace={{'editor1':{,
         //   extraPlugins: 'youtube'}}}
 
+        scriptLoader={{
+          load: (['/https://code.jquery.com/jquery-3.2.1.slim.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', '/https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'])
+        }}
 
         config={{
+
+          //   basePath :'/node_modules/ckeditor4-react/',
 
           //replace:[CKEDITOR.currentInstance],
           // external:('youtube', '../plugins/youtube/plugin.js'),
           // customConfig:['/config.js'],
-          extraPlugins: ['richcombo', 'font','dialog','templates','widget','dialog','docprops','colorbutton', 'justify', 'sourcedialog', 'autocomplete','textmatch','ajax','panelbutton','floatpanel','emoji','div'],
-          removePlugins : ['sourcearea'],
+          extraPlugins: ['richcombo', 'font', 'dialog', 'templates', 'widget', 'dialog', 'docprops', 'colorbutton', 'justify', 'sourcedialog', 'autocomplete', 'textmatch', 'ajax', 'panelbutton', 'floatpanel', 'div','iframe'],
+          removePlugins: ['sourcearea'],
+          font_names :"Arial/Arial; Helvetica; sans-serif;Times New Roman/Times New Roman; serif;Verdana;Source Sans Pro",
+          font_defaultLabel : 'Source Sans Pro',
+          fontSize_defaultLabel : '20px',
+  
           // imageUploadUrl:'../imageUpload/',
           // toolbar : [
           //   [ '-', 'Bold', 'Italic','Youtube' ]
           // ],
           // //language : 'zh' - correct chinese language
           // fullPage: true,
-          allowedContent:true,
+          allowedContent: true,
           // extraAllowedContent: 'script link br img'
           // filebrowserBrowseUrl :'javascript:void(0)' //enable browser options- but need to set the path
         }}
 
-        onInit={ (event) => {  
-            // You can store the "editor" and use when it is needed.  
-            console.log( 'Editor is ready to use!');  
-        } }  
+        onInit={(event) => {
+          // You can store the "editor" and use when it is needed.  
+          console.log('Editor is ready to use!');
+        }}
 
         onChange={(event) => {
           // console.log(CKEDITOR.htmlDataProcessor.toHtml())
           // console.log("NAME" + name + "AND VALUE" + value)
           //console.log(CKEDITOR.currentInstance )
           console.log(CKEDITOR.basePath)
-          console.log(CKEDITOR.plugins.getFilePath( 'youtube' ))
-          console.log(CKEDITOR.plugins.getPath( 'templates' ))
-          var editor=CKEDITOR.currentInstance;
+          console.log(CKEDITOR.plugins.getFilePath('youtube'))
+          console.log(CKEDITOR.plugins.getPath('templates'))
+          var editor = CKEDITOR.currentInstance;
           const data = editor.getData()
           console.log(data)
 
@@ -91,17 +109,15 @@ const Editor = ({ onChange, name, value }) => {
         }}
 
 
-        // onBlur={ ( event, editor ) => {
-        //     console.log( 'Blur.', editor );
-        // } }
-        // onFocus={ ( event, editor ) => {
-        //     console.log( 'Focus.', editor );
-        // } }
+        onBlur={(event, editor) => {
+          console.log('Blur.', editor);
+        }}
+        onFocus={(event, editor) => {
+          console.log('Focus.', editor);
+        }}
 
 
       />
-
-
     </Wrapper>
   );
 };
@@ -161,28 +177,33 @@ export default Editor;
 //     //     document.body.append(script);
 //     // }
 
-    
- 
-//     render() {
-        
-//         const scriptTag = '<script src="https://cdn.ckeditor.com/4.14.1/standard-all/ckeditor.js"></script>';
-//         const scriptTag2="<script>CKEDITOR.replace('content')</script>"
-//         return (
-            
-//             <div  className="App" ref={el => (this.div = el)}>
-                
-//                 <Helmet>
-//                 <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
-//                 </Helmet>
-//                 <div>
-//                     <h1>Hello react</h1>
-//                     <textarea name="content" id="content"></textarea>
-//                 </div>
-//                 <div dangerouslySetInnerHTML={{ __html: "<script>CKEDITOR.replace('content')</script>" }}></div>
-//                     {/* {ReactHtmlParser(scriptTag)} */}
-//             </div>
 
-            
+
+//     render() {
+
+//         const scriptTag = '<script src="https://cdn.ckeditor.com/4.14.1/standard-all/ckeditor.js"></script>';
+//         const scriptTag2 = "<script>CKEDITOR.replace('content')</script>"
+
+//         return (
+//             <React.Fragment>
+
+//                 <div className="container" ref={el => (this.div = el)}>
+
+//                     <Helmet>
+//                         <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+//                     </Helmet>
+//                     <div>
+//                         <h1>Hello react</h1>
+//                         <textarea name="content" id="content"></textarea>
+//                     </div>
+//                     {/* <div dangerouslySetInnerHTML={{ __html: "<script>CKEDITOR.replace('content')</script>" }}></div> */}
+//                 </div>
+//                 <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+//                 <script>
+//                     CKEDITOR.replace('content')
+//                  </script>
+//             </React.Fragment>
+
 //             // <div className="App" ref={el => (this.div = el)}>
 //             //    
 //             //     {/* Script is inserted here */}

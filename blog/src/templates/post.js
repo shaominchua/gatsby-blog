@@ -4,20 +4,31 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import ReactMarkdown from "react-markdown"
 import "../static/global.css"
+import "../static/bootstrap.css"
 import ReactHtmlParser from "react-html-parser"
-
+import Helmet from "react-helmet"
+// import { withPrefix, Link } from "gatsby"
+// // import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 const ArticleTemplate = ({ data }) => (
   <Layout style={{
     overflow: `hidden`
   }}>
-    <Img fixed={data.strapiPosts.image.childImageSharp.fixed} />
 
-    <div style={{
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12" ><Img fixed={data.strapiPosts.image.childImageSharp.fixed} /></div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style={{
       marginLeft: `5%`
     }}>
-      <div>Length: {data.strapiPosts.readLength}</div>
-      <h4>Language: {data.strapiPosts.language}</h4>
-      <h1>{data.strapiPosts.title}</h1>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12" style={{ fontStyle: `italic`, fontFamily: `Source Sans Pro`, fontSize: '20px' }} >Length: {data.strapiPosts.readLength}</div>
+        {/* <div class="col-xs-12 col-sm-12 col-lg-12">  <h4>Language: {data.strapiPosts.language}</h4></div> */}
+        <div class="col-xs-12 col-sm-12 col-lg-12"> <h1>{data.strapiPosts.title}</h1></div>
+
+      </div>
 
       <div style={{
         overflow: `hidden`
@@ -25,51 +36,41 @@ const ArticleTemplate = ({ data }) => (
         {ReactHtmlParser(data.strapiPosts.content)}
       </div>
     </div>
-    <hr></hr>
+
+    {/* YOU MAY ALSO LIKE SECTION */}
     <h3 style={{
       fontWeight: `normal`
     }}>You might also like</h3>
-    
-    <ul style={{
-      listStyleType: `none`,
-      float: `left`
-    }}>
-      {data.strapiPosts.relatedPosts.map(documents => (
-          <li style={{
-            float: `left`,
-            width: `33%`
-          }} key={documents.id}> 
-              <div style={{
-                float: `left`,
-                width: `80%`
-              }}>
-                <Img fixed={documents.previewImage.childImageSharp.fixed}/>
-                <br/>
-                <Link style={{
-                  color: `black`,
-                  textDecoration: `none`,
-                }} to={`/Posts_${documents.id}`}>{documents.title}</Link>
-              </div>
-        
-          </li>
-          
-      ))}
-     
-    </ul>
-   {/* <Link to="/page-2/">Go to page 2</Link> */}
-    <br style={{
-      clear: `both`
-    }}></br>
+    <hr></hr>
 
-    <div style={{
-      float: `clear`
-    }}></div>
+    <div class="container-fluid">
+    <div class="row">
+      {data.strapiPosts.relatedPosts.map(documents => (
+       
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            
+            <br />
+            <Link style={{
+              color: `black`,
+              textDecoration: `none`,
+            }} to={`/Posts_${documents.id}`}>
+              <Img fixed={documents.previewImage.childImageSharp.fixed} />
+            </Link>
+        </div>
+      ))}
+                </div>
+
+    </div>
+
+
+    {/* COMMENT SECTION */}
+
     <h3 style={{
-      fontWeight: `normal` ,  float: `left`
+      fontWeight: `normal`, float: `left`
     }}>Leave a comment</h3>
 
     <h3 style={{
-      fontWeight: `normal`,  clear: `both`
+      fontWeight: `normal`, clear: `both`
     }}>Your email address will not be published. Required field are marked * </h3>
 
 
@@ -97,12 +98,15 @@ const ArticleTemplate = ({ data }) => (
         </div>
         <div style={{ float: `clear`, width: `25%` }} ></div>
         <div style={{ float: `clear`, width: `25%` }} ></div>
+        <br></br>
         <div style={{ float: `left`, width: `100%` }}>
           <button onClick="window.location.reload()" type="submit"> Send</button>
         </div>
       </div>
 
     </form>
+
+    <br></br>
 
   </Layout>
 )
@@ -127,6 +131,7 @@ query ArticleTemplate ($id: String!) {
     		relatedPosts{
           id
           title
+          previewText
           previewImage{
             absolutePath
             childImageSharp{

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { Label, InputDescription, InputErrors } from 'strapi-helper-plugin';
 import Editor from '../CKEditor/index';
+// import Editor from '../../../../../../node_modules/ckeditor4-webpack-template-master/src/index'
 const WysiwygWithErrors = ({
   inputDescription,
   errors,
