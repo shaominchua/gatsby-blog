@@ -3,8 +3,31 @@ module.exports = {
     title: `PASTORHOW.COM`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    menuLinks: [
+      {
+        name: 'About',
+        link: '/'
+      },
+      {
+        name: 'Thoughts & Article',
+        link: '/'
+      },
+      {
+        name: 'Messages',
+        link: '/'
+      },
+      {
+        name: 'Resources',
+        link: '/'
+      },
+      {
+        name: 'Heart of God Church',
+        link: 'https://heartofgodchurch.org/'
+      }
+    ]
   },
   plugins: [
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -24,7 +47,8 @@ module.exports = {
           'users',
           'posts',
           'seriesses',
-          'categories'
+          'categories',
+          'homes'
         ],
         queryLimit: 1000,
       },
@@ -44,7 +68,7 @@ module.exports = {
     },
 
     'gatsby-plugin-offline',
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

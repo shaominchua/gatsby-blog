@@ -13,12 +13,6 @@
       "type": "richtext",
       "required": true
     },
-    "subtitle": {
-      "type": "richtext"
-    },
-    "readLength": {
-      "type": "richtext"
-    },
     "media": {
       "collection": "file",
       "via": "related",
@@ -72,6 +66,21 @@
     },
     "previewText": {
       "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "readLength": {
+      "type": "string"
+    },
+    "relatedPosts": {
+      "collection": "post",
+      "via": "posts",
+      "dominant": true
+    },
+    "posts": {
+      "collection": "post",
+      "via": "relatedPosts"
     }
   }
 }
