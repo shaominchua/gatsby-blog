@@ -97,7 +97,7 @@ const Editor = ({ onChange, name, value }) => {
           // console.log(CKEDITOR.htmlDataProcessor.toHtml())
           // console.log("NAME" + name + "AND VALUE" + value)
           //console.log(CKEDITOR.currentInstance )
-          console.log(CKEDITOR.basePath)
+          //console.log(CKEDITOR.basePath)
           console.log(CKEDITOR.plugins.getFilePath('youtube'))
           console.log(CKEDITOR.plugins.getPath('templates'))
           var editor = CKEDITOR.currentInstance;
