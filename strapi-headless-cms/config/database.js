@@ -1,6 +1,6 @@
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
-  "connections": {
+  connections: {
     "default": {
       "connector": "bookshelf",
       "settings": {
@@ -14,5 +14,5 @@ module.exports = ({ env }) => ({
       },
       "options": {}
     }
-  }
+  },
 });
