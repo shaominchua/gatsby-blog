@@ -119,7 +119,7 @@ const IndexPage = ({ data }) => {
 
             {data.allStrapiSeriesses.edges.map(documents => (
               <div class="row">
-                <h2>{documents.node.previewText}</h2>
+                <h2>{documents.node.title}</h2>
                 <hr style={{
                   // listStyleType: `none`,
                   // marginLeft: `1.5%`,
@@ -157,7 +157,8 @@ const IndexPage = ({ data }) => {
 
         <div style={{
           overflow: `hidden`,
-          color: `black`
+          color: `black`,
+          backgroundColor:`#F9F9F9`
         }}>
           {data.allStrapiHomes.edges.map(documents => (
             <div class="container-fluid">
