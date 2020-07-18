@@ -13,12 +13,6 @@
       "type": "richtext",
       "required": true
     },
-    "subtitle": {
-      "type": "richtext"
-    },
-    "readLength": {
-      "type": "richtext"
-    },
     "media": {
       "collection": "file",
       "via": "related",
@@ -45,8 +39,48 @@
       "targetField": "title"
     },
     "blogSeries": {
+      "model": "seriess",
+      "via": "posts"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "previewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "previewText": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "readLength": {
+      "type": "string"
+    },
+    "relatedPosts": {
+      "collection": "post",
       "via": "posts",
-      "model": "seriess"
+      "dominant": true
+    },
+    "posts": {
+      "collection": "post",
+      "via": "relatedPosts"
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "name": "Home"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "imageSlider": {
+      "type": "richtext"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "footer": {
+      "type": "richtext"
+    }
+  }
+}
