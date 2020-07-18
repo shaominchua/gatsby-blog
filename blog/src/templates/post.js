@@ -7,6 +7,8 @@ import "../static/global.css"
 import "../static/bootstrap.css"
 import ReactHtmlParser from "react-html-parser"
 import Helmet from "react-helmet"
+import Image from 'gatsby-image';
+
 // import { withPrefix, Link } from "gatsby"
 // // import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 const ArticleTemplate = ({ data }) => (
@@ -16,7 +18,7 @@ const ArticleTemplate = ({ data }) => (
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-12" ><Img fixed={data.strapiPosts.image.childImageSharp.fixed} /></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12" ><Img  fluid={data.strapiPosts.image.childImageSharp.fluid} /></div>
       </div>
     </div>
 
@@ -128,6 +130,18 @@ query ArticleTemplate ($id: String!) {
             }
           }
         }
+
+        image{
+          absolutePath
+          childImageSharp{
+            fluid(maxWidth: 1900) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+
+        
+
     		relatedPosts{
           id
           title
