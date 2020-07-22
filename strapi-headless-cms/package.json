@@ -3,19 +3,19 @@
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
+  "main": "./server.js",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "setup": "cd admin && npm run setup",
+    "start": "node server.js",
+    "strapi": "node_modules/strapi/bin/strapi.js",
+    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
   },
-  
   "devDependencies": {
     "ckeditor4": "^4.14.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
-
   "dependencies": {
     "@akilli/ckeditor4-build-classic": "^0.1.0",
     "@akilli/ckeditor4-build-inline": "^0.1.0",
@@ -27,6 +27,7 @@
     "ckeditor-full": "^4.7.3",
     "ckeditor-youtube-plugin": "^2.1.14",
     "ckeditor4-react": "^1.1.1",
+    "cross-env": "^7.0.2",
     "knex": "<0.20.0",
     "pg": "^8.3.0",
     "react-ckeditor-component": "^1.1.0",
@@ -52,7 +53,7 @@
   },
   "engines": {
     "node": "10.x",
-    "npm": ">=6.0.0"
+    "npm": ">= 6.0.0"
   },
   "license": "MIT"
 }
