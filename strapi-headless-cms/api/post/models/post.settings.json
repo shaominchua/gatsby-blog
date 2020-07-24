@@ -24,10 +24,6 @@
       "plugin": "upload",
       "required": false
     },
-    "category": {
-      "model": "category",
-      "via": "post"
-    },
     "title": {
       "type": "string"
     },
@@ -81,6 +77,11 @@
     "posts": {
       "collection": "post",
       "via": "relatedPosts"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "categoryPosts",
+      "dominant": true
     }
   }
 }

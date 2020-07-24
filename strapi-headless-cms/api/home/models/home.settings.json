@@ -9,14 +9,22 @@
     "timestamps": true
   },
   "attributes": {
-    "imageSlider": {
-      "type": "richtext"
-    },
     "about": {
       "type": "richtext"
     },
     "footer": {
       "type": "richtext"
+    },
+    "imageSlider": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

@@ -12,9 +12,9 @@
     "categoryType": {
       "type": "string"
     },
-    "post": {
-      "via": "category",
-      "model": "post"
+    "categoryPosts": {
+      "via": "categories",
+      "collection": "post"
     }
   }
 }
