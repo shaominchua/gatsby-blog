@@ -90,7 +90,6 @@ const Layout = ({ children }) => (
         allStrapiHomes {
           edges {
             node{
-              imageSlider,
               about,
               footer
             }
