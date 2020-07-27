@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
           {data.allStrapiHomes.edges.map(documents => (
             <div class="container-fluid">
               <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-12" >{ReactHtmlParser(documents.node.imageSlider)}</div>
+                {/* <div class="col-xs-12 col-sm-12 col-lg-12" >{ReactHtmlParser(documents.node.imageSlider)}</div> */}
               </div>
             </div>
           ))}
@@ -180,7 +180,6 @@ query LandingPage {
   allStrapiHomes {
     edges {
       node{
-        imageSlider,
         about,
         footer
       }
