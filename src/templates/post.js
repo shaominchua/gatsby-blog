@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown"
 import "../static/global.css"
 import "../static/bootstrap.css"
 import ReactHtmlParser from "react-html-parser"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import Image from 'gatsby-image';
 
 // import { withPrefix, Link } from "gatsby"
@@ -15,10 +15,13 @@ const ArticleTemplate = ({ data }) => (
   <Layout style={{
     overflow: `hidden`
   }}>
+    {/* <div>
+      {typeof window !== 'undefined' && ReactMediaPlayer && <ReactMediaPlayer />}
+    </div> */}
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-12" ><Img  fluid={data.strapiPosts.image.childImageSharp.fluid} /></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12" ><Img fluid={data.strapiPosts.image.childImageSharp.fluid} /></div>
       </div>
     </div>
 
@@ -46,11 +49,11 @@ const ArticleTemplate = ({ data }) => (
     <hr></hr>
 
     <div class="container-fluid">
-    <div class="row">
-      {data.strapiPosts.relatedPosts.map(documents => (
-       
+      <div class="row">
+        {data.strapiPosts.relatedPosts.map(documents => (
+
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-            
+
             <br />
             <Link style={{
               color: `black`,
@@ -58,9 +61,9 @@ const ArticleTemplate = ({ data }) => (
             }} to={`/Posts_${documents.id}`}>
               <Img fixed={documents.previewImage.childImageSharp.fixed} />
             </Link>
-        </div>
-      ))}
-                </div>
+          </div>
+        ))}
+      </div>
 
     </div>
 
@@ -139,8 +142,6 @@ query ArticleTemplate ($id: String!) {
             }
           }
         }
-
-        
 
     		relatedPosts{
           id

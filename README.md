@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Blog Application using Strapi & Gatsby
 
 ### Instructions- For building Strapi
@@ -16,7 +15,6 @@
 ### Useful Tutorial
 
 1. https://strapi.io/blog/building-a-static-website-using-gatsby-and-strap
-=======
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
@@ -116,4 +114,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
->>>>>>> 91392dc59418db6fb563766d456b0f0ec2001b61

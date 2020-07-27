@@ -19,18 +19,18 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <Layout>
 
-        <div style={{
+        {/* <div style={{
           overflow: `hidden`,
           color: `black`
         }}>
           {data.allStrapiHomes.edges.map(documents => (
             <div class="container-fluid">
               <div class="row">
-                {/* <div class="col-xs-12 col-sm-12 col-lg-12" >{ReactHtmlParser(documents.node.imageSlider)}</div> */}
+                <div class="col-xs-12 col-sm-12 col-lg-12" >{ReactHtmlParser(documents.node.imageSlider)}</div>
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         <br></br>
 
         <div class="container-fluid" style={{ backgroundColor: `#E2E2E2` }} >
