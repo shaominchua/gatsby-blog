@@ -29,7 +29,7 @@ const ArticleTemplate = ({ data }) => (
       marginLeft: `5%`
     }}>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-lg-12" style={{ fontStyle: `italic`, fontFamily: `Source Sans Pro`, fontSize: '20px' }} >Length: {data.strapiPosts.readLength}</div>
+        <div class="col-xs-12 col-sm-12 col-lg-12" style={{ fontStyle: `italic`, fontFamily: `Source Sans Pro`, fontSize: `20px` }} >Length: {data.strapiPosts.readLength}</div>
         {/* <div class="col-xs-12 col-sm-12 col-lg-12">  <h4>Language: {data.strapiPosts.language}</h4></div> */}
         <div class="col-xs-12 col-sm-12 col-lg-12"> <h1>{data.strapiPosts.title}</h1></div>
 

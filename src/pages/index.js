@@ -35,10 +35,10 @@ const IndexPage = ({ data }) => {
 
         <div class="container-fluid" style={{ backgroundColor: `#E2E2E2` }} >
           <div class="row" style={{ marginBottom: `1%` }}>
-            <div class="col-xs-12 col-sm-12 col-lg-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: '16px' }} >Stay Connected</div>
+            <div class="col-xs-12 col-sm-12 col-lg-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: `16px` }} >Stay Connected</div>
           </div>
           <div class="row" style={{ marginBottom: `1%` }}>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: '16px', fontWeight: 'bold' }} >Pastor Tan Seow How (Pastor How) &nbsp;
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: `16px`, fontWeight: `bold` }} >Pastor Tan Seow How (Pastor How) &nbsp;
             <a href="https://www.instagram.com/pastor.how/">
                 <img src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" data-src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" class="socialMediaFull ls-is-cached lazyloaded" alt="pastorhow instagram"></img>
               </a>
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
 
               </a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: '16px', fontWeight: 'bold' }} >Pastor Cecilia Chan (Pastor Lia) &nbsp;
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: `16px`, fontWeight: `bold`}} >Pastor Cecilia Chan (Pastor Lia) &nbsp;
             <a href="https://www.instagram.com/pastor.lia">
                 <img src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" data-src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" class="socialMediaFull ls-is-cached lazyloaded" alt="pastorlia instagram" />
               </a>
@@ -65,7 +65,7 @@ const IndexPage = ({ data }) => {
               </a>
 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: '16px', fontWeight: 'bold' }} >Heart of God Church (Singapore) &nbsp;
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style={{ textAlign: `center`, fontFamily: `Source Sans Pro`, fontSize: `16px`, fontWeight: `bold` }} >Heart of God Church (Singapore) &nbsp;
             <a href="https://www.instagram.com/hogc">
             <img src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" data-src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pastorhow.com/wp-content/uploads/2019/10/insta.png" class="socialMediaFull ls-is-cached lazyloaded" alt="pastorlia instagram"></img>
 
@@ -104,7 +104,7 @@ const IndexPage = ({ data }) => {
                   <Link style={{
                     color: `black`,
                     textDecoration: `none`,
-                    fontFamily: `Source Sans Pro`, fontSize: '20px'
+                    fontFamily: `Source Sans Pro`, fontSize: `20px`
                   }} to={`/${document.node.id}`}>{document.node.previewText}</Link>
                 </p>
               </div>
@@ -135,7 +135,7 @@ const IndexPage = ({ data }) => {
                         <br />
                         <Link style={{
                           color: `black`,
-                          textDecoration: `none`, fontFamily: `Source Sans Pro`, fontSize: '20px'
+                          textDecoration: `none`, fontFamily: `Source Sans Pro`, fontSize: `20px`
                         }} to={`/Posts_${documentss.id}`}>{documentss.previewText}</Link>
                       </p>
                     </div>
